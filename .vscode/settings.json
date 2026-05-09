@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "bin\\Release\\net8.0\\publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/0ce873b5-3561-4443-bec3-08a107801c93/resourceGroups/ventas/providers/Microsoft.Web/sites/api-ventas2016"
+}

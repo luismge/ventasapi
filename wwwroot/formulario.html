@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario Productos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      color: #333;
+      margin: 40px;
+    }
+    h2 {
+      color: #0066cc;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    label {
+      font-size: 18px;
+      font-weight: bold;
+      color: #444;
+    }
+    input {
+      font-size: 16px;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #0066cc;
+      color: white;
+      font-size: 18px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #004999;
+    }
+    pre {
+      background-color: #eef;
+      padding: 15px;
+      border-radius: 6px;
+      font-size: 16px;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <h2>Agregar Producto</h2>
+  <form id="productoForm">
+    <label>Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre" required><br>
+
+    <label>Precio:</label><br>
+    <input type="number" id="precio" name="precio" step="0.01" required><br>
+
+    <button type="submit">Guardar</button>
+  </form>
+
+  <h3>Respuesta del servidor:</h3>
+  <pre id="resultado"></pre>
+
+  <script>
+    document.getElementById("productoForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById("nombre").value;
+      const precio = document.getElementById("precio").value;
+
+      try {
+        const respuesta = await fetch("http://localhost:5000/api/Productos", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ nombre, precio })
+        });
+        const data = await respuesta.json();
+        document.getElementById("resultado").textContent = JSON.stringify(data, null, 2);
+      } catch (err) {
+        document.getElementById("resultado").textContent = "Error: " + err;
+      }
+    });
+  </script>
+</body>
+</html>

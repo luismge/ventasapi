@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "3xlvsCF3pGVrW8/boH26q9SHUVZ3UV5p4lxSW1UCZZ8=",
+  "Source": "VentasApi",
+  "BasePath": "_content/VentasApi",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "VentasApi\\wwwroot",
+      "Source": "VentasApi",
+      "ContentRoot": "C:\\VENTASNET\\VentasApi\\wwwroot\\",
+      "BasePath": "_content/VentasApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\VENTASNET\\VentasApi\\wwwroot\\formulario.html",
+      "SourceId": "VentasApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\VENTASNET\\VentasApi\\wwwroot\\",
+      "BasePath": "_content/VentasApi",
+      "RelativePath": "formulario.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\formulario.html"
+    }
+  ]
+}
